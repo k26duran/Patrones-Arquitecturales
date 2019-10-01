@@ -1,6 +1,6 @@
 # Patrones-Arquitecturales
 
-En este repositorio se encuentra un tutorial de cómo se crea y se despliega un contenido estático en S3, una API-REST desarrollada en Spring con maven y conectada a una base de datos Mysql, y por supuesto la creación de la base de datos RDS. Si desea observar el video tutorial ingrese en el siguiente link: [tutorial-S3-EC2-RDS](https://www.youtube.com/watch?v=5A9hwHA_UPc).
+En este repositorio se encuentra un tutorial de cómo se crea y se despliega un contenido estático en S3, una API-REST desarrollada en Spring con maven y conectada a una base de datos Mysql, y por supuesto la creación de la base de datos RDS. Si desea observar el video tutorial ingrese en el siguiente link: [tutorial-S3-EC2-RDS](https://www.youtube.com/watch?v=BFiATN9CILQ).
 >Para más información sobre los costos que conlleva cada uno de los recursos creados acceda a los enlaces que se encuentran a continuación:
 >
 >    * [Amazon S3](https://aws.amazon.com/s3/pricing/) - Información adicional de S3.
