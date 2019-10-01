@@ -1,11 +1,12 @@
 # Patrones-Arquitecturales
 
-En este repositorio se encuentra un tutorial de cómo se crea y se despliega un contenido estático en S3, una API-REST desarrollada en Spring con maven y conectada a una base de datos Mysql, y por supuesto la creación de la base de datos RDS. Si desea observar el video tutorial ingrese en el siguiente link: .
->Para más información sore los costos que conlleva cada uno de los recursos creados acceda a los enlaces que se encuentran a continuación:
-    - [Amazon S3](https://aws.amazon.com/s3/pricing/) - Información adicional de S3.
-    - [Amazon EC2](https://aws.amazon.com/ec2/pricing/) - Información adicional de EC2.
-    - [Amazon VPC](http://breakdance.iohttps://aws.amazon.com/vpc/pricing/) - Información adicional de VPC.
-    - [Amazon RDS](https://aws.amazon.com/rds/pricing/) - Información adicional de RDS.
+En este repositorio se encuentra un tutorial de cómo se crea y se despliega un contenido estático en S3, una API-REST desarrollada en Spring con maven y conectada a una base de datos Mysql, y por supuesto la creación de la base de datos RDS. Si desea observar el video tutorial ingrese en el siguiente link: [tutorial-S3-EC2-RDS](https://www.youtube.com/watch?v=5A9hwHA_UPc).
+>Para más información sobre los costos que conlleva cada uno de los recursos creados acceda a los enlaces que se encuentran a continuación:
+>
+>    * [Amazon S3](https://aws.amazon.com/s3/pricing/) - Información adicional de S3.
+>    * [Amazon EC2](https://aws.amazon.com/ec2/pricing/) - Información adicional de EC2.
+>    * [Amazon VPC](https://aws.amazon.com/vpc/pricing/) - Información adicional de VPC.
+>    * [Amazon RDS](https://aws.amazon.com/rds/pricing/) - Información adicional de RDS.
 
 ### S3
 Entramos a la consola de AWS y en la parte de servicios buscamos S3.
@@ -223,8 +224,8 @@ $ ssh -i "nombreLlave.pem" direccionEC2.amazonaws.com
 ```
 Después de establecer la conexión, instalaremos la version 1.8.0 de Java.
 ```sh
-$ yum remove java-1.7.0-openjdk
-$ yum install java-1.8.0
+$ sudo yum remove java-1.7.0-openjdk
+$ sudo yum install java-1.8.0
 ```
 Para salirnos de la conexión, ejecutamos el siguiente comando:
 ```sh
@@ -241,6 +242,7 @@ $ sftp -i "nombreLlave.pem" direccionEC2.amazonaws.com
 Y buscamos el .jar que se encuentra en la carpeta /target del directorio en donde tenemos nuestra aplicación maven. Nos pasamos el ejecutable con el siguiente comando:
 ```sh
 $ put nombreAplicacion.jar
+$ exit
 ```
 Esperamos a que se pase el archivo y deberiamos ver algo como esto:
 ![](https://github.com/k26duran/Patrones-Arquitecturales/blob/master/img/ec2/15.png)
@@ -248,6 +250,8 @@ Esperamos a que se pase el archivo y deberiamos ver algo como esto:
 Ahora podemos correr el .jar desde la instancia EC2. Podemos asegurarnos de que el .jar se encuentre en los archivos ingresando el comando "ls" en la consola. 
 Para ejecutar el .jar usamos el siguiente comando:
 ```sh
+$ ssh -i "nombreLlave.pem" direccionEC2.amazonaws.com
+$ ls
 $ java -jar nombreAplicacion.jar
 ```
 ![](https://github.com/k26duran/Patrones-Arquitecturales/blob/master/img/ec2/16.png)
